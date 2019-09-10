@@ -16,3 +16,26 @@ var alphabet = {
 oracion = 'MI CULO EN FUEGO';
 aux = oracion.split('').map(function (e) { return alphabet[e.toLowerCase()] || ''; }).join(' ').replace(/ +/g, ' ');
 console.log(aux);
+
+
+
+
+function Bsearch(word) {
+    var arr = ['manzana', 'plátano', 'cereza', 'fechas', 'huevos', 'higos', 'uvas'];
+    arr.sort();
+    L = 0;
+    R = arr.length;
+    while(L < R) {
+        console.log(arr.slice(L, R));
+        midPoint = parseInt((L+R)/2);
+        console.log(midPoint);
+        if(arr[midPoint] === word) return true;
+        else if(arr[midPoint] < word) {
+            L = midPoint+1;
+        }
+        else {
+            R = midPoint;
+        }
+    }
+    return false;
+}
